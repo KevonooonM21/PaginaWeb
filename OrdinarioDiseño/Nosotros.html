@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El Arte — BLOKK.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/Estyle.css" />
+  <script src="js/guard.js"></script>
+  <link rel="stylesheet" href="css/paginas.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">BLOKK<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="colecciones.html">Colecciones</a></li>
+      <li><a href="nosotros.html" style="color:var(--lila)">El arte</a></li>
+      <li><a href="drops.html">Drops</a></li>
+      <li><a href="index.html#newsletter">Contacto</a></li>
+    </ul>
+    <button class="nav-cart" id="btn-carrito">Carrito (<span class="contador-carrito">0</span>)</button>
+  </nav>
+
+  <!-- PANEL CARRITO -->
+  <div class="carrito-panel" id="carrito-panel">
+    <p class="carrito-titulo">Tu carrito</p>
+    <ul class="carrito-lista" id="carrito-lista">
+      <li class="carrito-vacio">Aún no agregas nada</li>
+    </ul>
+    <div class="carrito-total">
+      <span>Total</span>
+      <span id="carrito-total">$0</span>
+    </div>
+    <button class="btn-checkout">Ir al checkout →</button>
+  </div>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <a href="index.html">Inicio</a>
+    <span>/</span>
+    <span style="color:var(--crema)">El Arte</span>
+  </div>
+
+  <!-- HERO IMAGEN -->
+  <section style="padding:0;position:relative;height:70vh;overflow:hidden;border-bottom:1px solid var(--gris1);">
+    <img src="img/vatooooooooo.jpg" alt="Arte BLOKK."
+      style="width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.5);" />
+    <div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:3rem 2rem;background:linear-gradient(to top,rgba(13,13,13,0.95) 0%,transparent 60%);">
+      <p class="section-label">Nuestra historia</p>
+      <h1 style="font-family:var(--display);font-size:clamp(3rem,8vw,6rem);line-height:1;letter-spacing:2px;">
+        EL ARTE ES<br>EL <span style="color:var(--morado)">MENSAJE</span>
+      </h1>
+    </div>
+  </section>
+
+  <!-- MANIFIESTO -->
+  <div class="manifiesto">
+    <p class="manifiesto-text">
+      BLOKK. nació en las calles.<br>
+      No en un estudio de diseño.<br>
+      No en una sala de juntas.<br>
+      En la banqueta, con una lata,<br>
+      con el muro como lienzo.<br><br>
+      <span class="accent">No vendemos ropa.</span><br>
+      Vendemos identidad.
+    </p>
+  </div>
+
+  <!-- STATS -->
+  <section style="background:var(--gris1);padding:4rem 2rem;">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1.5rem;max-width:900px;margin:0 auto;text-align:center;">
+      <div><p style="font-family:var(--display);font-size:3rem;color:var(--lila);">12+</p><p style="font-size:0.8rem;color:var(--gris2);text-transform:uppercase;letter-spacing:0.1em;">Artistas colaboradores</p></div>
+      <div><p style="font-family:var(--display);font-size:3rem;color:var(--lila);">3</p><p style="font-size:0.8rem;color:var(--gris2);text-transform:uppercase;letter-spacing:0.1em;">Colecciones lanzadas</p></div>
+      <div><p style="font-family:var(--display);font-size:3rem;color:var(--lila);">100%</p><p style="font-size:0.8rem;color:var(--gris2);text-transform:uppercase;letter-spacing:0.1em;">Diseño original</p></div>
+      <div><p style="font-family:var(--display);font-size:3rem;color:var(--lila);">5K+</p><p style="font-size:0.8rem;color:var(--gris2);text-transform:uppercase;letter-spacing:0.1em;">Prendas entregadas</p></div>
+    </div>
+  </section>
+
+  <!-- HISTORIA / TIMELINE -->
+  <section style="padding:4rem 2rem;">
+    <p class="section-label">Cómo llegamos aquí</p>
+    <h2 class="section-title" style="margin-bottom:2.5rem;">LA HISTORIA</h2>
+
+    <div style="max-width:720px;display:flex;flex-direction:column;gap:2.5rem;">
+
+      <div style="display:grid;grid-template-columns:80px 1fr;gap:1.5rem;align-items:start;">
+        <div>
+          <p style="font-family:var(--display);font-size:2.2rem;color:var(--morado);line-height:1;">2021</p>
+          <div style="width:1px;background:var(--gris1);height:100%;margin:0.5rem auto 0;display:block;"></div>
+        </div>
+        <div>
+          <p style="font-weight:700;margin-bottom:0.4rem;">El primer muro</p>
+          <p style="font-size:0.85rem;color:var(--gris2);line-height:1.6;">Todo empezó con un colectivo de 4 amigos con latas en Tepito. El arte callejero como protesta, como identidad, como forma de existir en la ciudad.</p>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:80px 1fr;gap:1.5rem;align-items:start;">
+        <div>
+          <p style="font-family:var(--display);font-size:2.2rem;color:var(--morado);line-height:1;">2022</p>
+        </div>
+        <div>
+          <p style="font-weight:700;margin-bottom:0.4rem;">La primera prenda</p>
+          <p style="font-size:0.85rem;color:var(--gris2);line-height:1.6;">La pregunta fue: ¿y si el muro pudiera caminar? La primera camiseta con serigrafía artesanal, 30 piezas, vendidas en una semana en un tianguis de La Lagunilla.</p>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:80px 1fr;gap:1.5rem;align-items:start;">
+        <div>
+          <p style="font-family:var(--display);font-size:2.2rem;color:var(--morado);line-height:1;">2023</p>
+        </div>
+        <div>
+          <p style="font-weight:700;margin-bottom:0.4rem;">Drop 01 — BLOKK. Original</p>
+          <p style="font-size:0.85rem;color:var(--gris2);line-height:1.6;">Primera colección formal. 4 piezas, 200 unidades cada una. Se agotaron en 48 horas. La comunidad empezó a formarse.</p>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:80px 1fr;gap:1.5rem;align-items:start;">
+        <div>
+          <p style="font-family:var(--display);font-size:2.2rem;color:var(--morado);line-height:1;">2024</p>
+        </div>
+        <div>
+          <p style="font-weight:700;margin-bottom:0.4rem;">La red de artistas</p>
+          <p style="font-size:0.85rem;color:var(--gris2);line-height:1.6;">Colaboraciones con 12 artistas de CDMX, Guadalajara y Monterrey. Cada uno trae su voz, su barrio, su técnica. BLOKK. se convierte en plataforma.</p>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:80px 1fr;gap:1.5rem;align-items:start;">
+        <div>
+          <p style="font-family:var(--display);font-size:2.2rem;color:var(--lila);line-height:1;">2025</p>
+        </div>
+        <div>
+          <p style="font-weight:700;margin-bottom:0.4rem;">Temporada 01 — El mundo</p>
+          <p style="font-size:0.85rem;color:var(--gris2);line-height:1.6;">Ropa del barrio para el mundo. Primera temporada con distribución internacional. El arte de la calle mexicana cruza fronteras.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ARTISTAS -->
+  <section id="artistas" style="padding:1rem 0 4rem;background:var(--gris1);">
+    <div style="padding:0 2rem 2rem;">
+      <p class="section-label">Los que hacen posible el arte</p>
+      <h2 class="section-title">ARTISTAS</h2>
+      <div class="divider"></div>
+      <p class="section-desc">Cada colección es una colaboración. Conoce a quienes ponen su firma en tus prendas.</p>
+    </div>
+
+    <div class="artistas-grid">
+
+      <div class="artista-card">
+        <div class="artista-img">ZKR</div>
+        <div class="artista-body">
+          <p class="artista-alias">ZRKR</p>
+          <p class="artista-ciudad">CDMX — Tepito</p>
+          <p class="artista-bio">Especialista en throw-ups de gran formato. Su trabajo domina los puentes del Circuito Interior desde 2018.</p>
+        </div>
+      </div>
+
+      <div class="artista-card">
+        <div class="artista-img">NMR</div>
+        <div class="artista-body">
+          <p class="artista-alias">NAMERA</p>
+          <p class="artista-ciudad">Guadalajara — Analco</p>
+          <p class="artista-bio">Muralista. Combina iconografía prehispánica con lettering callejero contemporáneo. Colaboración en Drop 01.</p>
+        </div>
+      </div>
+
+      <div class="artista-card">
+        <div class="artista-img">SLK</div>
+        <div class="artista-body">
+          <p class="artista-alias">SILK</p>
+          <p class="artista-ciudad">Monterrey — Barrio Antiguo</p>
+          <p class="artista-bio">Stencil y capas. Sus piezas tienen hasta 40 plantillas. Responsable de los gráficos de la Jacket Graf.</p>
+        </div>
+      </div>
+
+      <div class="artista-card">
+        <div class="artista-img">VRD</div>
+        <div class="artista-body">
+          <p class="artista-alias">VERDE</p>
+          <p class="artista-ciudad">CDMX — Doctores</p>
+          <p class="artista-bio">Crew OG de BLOKK. Wildstyle en medianeras. Lleva 10 años documentando la escena graff de la CDMX.</p>
+        </div>
+      </div>
+
+      <div class="artista-card">
+        <div class="artista-img">KLR</div>
+        <div class="artista-body">
+          <p class="artista-alias">KOLORS</p>
+          <p class="artista-ciudad">CDMX — Santa Fe</p>
+          <p class="artista-bio">Street art de gran escala con paletas saturadas. Responsable de la identidad visual de la Colección Concreto.</p>
+        </div>
+      </div>
+
+      <div class="artista-card">
+        <div class="artista-img">PKT</div>
+        <div class="artista-body">
+          <p class="artista-alias">PKTO</p>
+          <p class="artista-ciudad">Tijuana — Zona Norte</p>
+          <p class="artista-bio">El puente entre la escena bajacaliforniana y la CDMX. Tipografía mutante, influencia del border art.</p>
+        </div>
+      </div>
+
+      <div class="artista-card">
+        <div class="artista-img">MRN</div>
+        <div class="artista-body">
+          <p class="artista-alias">MARON</p>
+          <p class="artista-ciudad">CDMX — Iztapalapa</p>
+          <p class="artista-bio">Characters y personajes callejeros. Sus figuras aparecen en la Tee Throw-Up y en 3 paredes del Metro.</p>
+        </div>
+      </div>
+
+      <div class="artista-card" style="border-style:dashed;display:flex;align-items:center;justify-content:center;min-height:200px;">
+        <div style="text-align:center;padding:1.5rem;">
+          <p style="font-family:var(--display);font-size:2rem;color:var(--morado);margin-bottom:0.5rem;">+5</p>
+          <p style="font-size:0.8rem;color:var(--gris2);">Más artistas en próximas colecciones</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section style="padding:5rem 2rem;text-align:center;border-top:1px solid var(--gris1);">
+    <p class="section-label" style="text-align:center;">¿Eres artista?</p>
+    <h2 style="font-family:var(--display);font-size:clamp(2rem,5vw,3.5rem);margin-bottom:0.8rem;">TRABAJA CON NOSOTROS</h2>
+    <p style="color:var(--gris2);max-width:480px;margin:0 auto 2rem;">Si tienes un muro, una firma y una historia, hablemos. Buscamos artistas de toda la república.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="index.html#newsletter" class="btn btn-primary">Contáctanos</a>
+      <a href="colecciones.html" class="btn">Ver colecciones</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div>
+        <p class="footer-logo">BLOKK<span>.</span></p>
+        <p class="footer-tagline">Arte callejero en cada prenda.<br>Ropa del barrio para el mundo.</p>
+      </div>
+      <div>
+        <p class="footer-col-title">Tienda</p>
+        <ul class="footer-links">
+          <li><a href="colecciones.html">Colecciones</a></li>
+          <li><a href="drops.html">Drops</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Marca</p>
+        <ul class="footer-links">
+          <li><a href="nosotros.html">El arte</a></li>
+          <li><a href="#artistas">Artistas</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Soporte</p>
+        <ul class="footer-links">
+          <li><a href="#">FAQ</a></li>
+          <li><a href="index.html#newsletter">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 BLOKK. Todos los derechos reservados.</p>
+      <div class="footer-legal"><a href="#">Privacidad</a><a href="#">Términos</a></div>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { inicializarCarritoUI } from './js/carrito.js';
+    inicializarCarritoUI();
+  </script>
+
+</body>
+</html>

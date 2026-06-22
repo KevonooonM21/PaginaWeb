@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Producto — BLOKK.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/Estyle.css" />
+  <script src="js/guard.js"></script>
+  <link rel="stylesheet" href="css/paginas.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">BLOKK<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="colecciones.html">Colecciones</a></li>
+      <li><a href="nosotros.html">El arte</a></li>
+      <li><a href="drops.html">Drops</a></li>
+      <li><a href="index.html#newsletter">Contacto</a></li>
+    </ul>
+    <button class="nav-cart" id="btn-carrito">Carrito (<span class="contador-carrito">0</span>)</button>
+  </nav>
+
+  <!-- PANEL CARRITO -->
+  <div class="carrito-panel" id="carrito-panel">
+    <p class="carrito-titulo">Tu carrito</p>
+    <ul class="carrito-lista" id="carrito-lista">
+      <li class="carrito-vacio">Aún no agregas nada</li>
+    </ul>
+    <div class="carrito-total">
+      <span>Total</span>
+      <span id="carrito-total">$0</span>
+    </div>
+    <button class="btn-checkout">Ir al checkout →</button>
+  </div>
+
+  <!-- BREADCRUMB (se llenará con JS) -->
+  <div class="breadcrumb" id="breadcrumb">
+    <a href="index.html">Inicio</a>
+    <span>/</span>
+    <a href="colecciones.html">Colecciones</a>
+    <span>/</span>
+    <span style="color:var(--crema)" id="bc-nombre">Producto</span>
+  </div>
+
+  <!-- DETALLE DE PRODUCTO -->
+  <div class="producto-detalle" id="producto-detalle">
+    <!-- Se renderiza con JS -->
+    <div style="grid-column:1/-1;text-align:center;padding:6rem 0;color:var(--gris2);">
+      <p>Cargando producto…</p>
+    </div>
+  </div>
+
+  <!-- RELACIONADOS -->
+  <section style="padding:3rem 2rem 5rem; background:var(--gris1);">
+    <p class="section-label">También te puede gustar</p>
+    <h2 class="section-title" style="font-size:1.8rem; margin-bottom:1.5rem;">MÁS PRENDAS</h2>
+    <div class="catalogo-grid" id="relacionados"></div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div>
+        <p class="footer-logo">BLOKK<span>.</span></p>
+        <p class="footer-tagline">Arte callejero en cada prenda.<br>Ropa del barrio para el mundo.</p>
+      </div>
+      <div>
+        <p class="footer-col-title">Tienda</p>
+        <ul class="footer-links">
+          <li><a href="colecciones.html">Colecciones</a></li>
+          <li><a href="drops.html">Drops</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Marca</p>
+        <ul class="footer-links">
+          <li><a href="nosotros.html">El arte</a></li>
+          <li><a href="nosotros.html#artistas">Artistas</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Soporte</p>
+        <ul class="footer-links">
+          <li><a href="#">FAQ</a></li>
+          <li><a href="index.html#newsletter">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 BLOKK. Todos los derechos reservados.</p>
+      <div class="footer-legal"><a href="#">Privacidad</a><a href="#">Términos</a></div>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { agregarAlCarrito, inicializarCarritoUI, renderizarPanel } from './js/carrito.js';
+
+    const PRODUCTOS = [
+      { id: 1, nombre: 'HOODIE MURAL', tipo: 'Sudadera', coleccion: 'Blokk 01', precio: 799, tag: 'Nuevo', img: 'img/1.jpg',
+        desc: 'El punto de partida de BLOKK. Sudadera unisex de 380g, corte oversized, con gráfico de mural serigrafíado a mano. Interior felpado, capucha doble capa, bolsa canguro con zipper oculto.',
+        atributos: { Material: '80% algodón, 20% poliéster', Peso: '380g', Corte: 'Oversized', 'Cuidado': 'Lavar en frío', Origen: 'México' },
+        tallas: ['XS','S','M','L','XL','XXL'], agotadas: ['XS'] },
+      { id: 2, nombre: 'TEE THROW-UP', tipo: 'Camiseta', coleccion: 'Edición limitada', precio: 459, tag: 'Limited', img: 'img/2.jpg',
+        desc: 'Camiseta de edición limitada con gráfico Throw-Up original de artista local. Jersey 200g, corte regular, cuello redondo reforzado. Solo 150 unidades en existencia.',
+        atributos: { Material: '100% algodón', Peso: '200g', Corte: 'Regular', 'Cuidado': 'Lavar en frío', Unidades: '150 piezas' },
+        tallas: ['S','M','L','XL'], agotadas: [] },
+      { id: 3, nombre: 'CARGO URBAN', tipo: 'Pantalón', coleccion: 'Blokk 01', precio: 899, tag: '', img: 'img/3.jpg',
+        desc: 'Pantalón cargo de silueta amplia con 6 bolsas funcionales, cintura elástica con cordón, y parches de tela con prints de grafiti. Tela ripstop resistente.',
+        atributos: { Material: 'Ripstop 65/35', Corte: 'Baggy', Bolsas: '6 funcionales', 'Cuidado': 'Lavar a máquina', Origen: 'México' },
+        tallas: ['S','M','L','XL','XXL'], agotadas: ['XXL'] },
+      { id: 4, nombre: 'JACKET GRAF', tipo: 'Chaqueta', coleccion: 'Edición especial', precio: 1290, tag: 'Nuevo', img: 'img/5.webp',
+        desc: 'Coach jacket con interior de red y prints de grafiti full-sublimación. Cuello mao, botones a presión, dos bolsas laterales. Colaboración con el artista ZRKR.',
+        atributos: { Material: 'Nylon 100%', Forro: 'Malla polyester', Técnica: 'Full sublimación', Artista: 'ZRKR', Origen: 'México' },
+        tallas: ['S','M','L','XL'], agotadas: ['S'] },
+      { id: 5, nombre: 'TEE OUTLINE', tipo: 'Camiseta', coleccion: 'Blokk 01', precio: 399, tag: '', img: 'img/2.jpg',
+        desc: 'Camiseta esencial con el outline de la BLOKK. en el pecho. Silueta limpia para los que prefieren el detalle sobre el grito.',
+        atributos: { Material: '100% algodón ring-spun', Peso: '185g', Corte: 'Regular', 'Cuidado': 'Lavar en frío' },
+        tallas: ['XS','S','M','L','XL','XXL'], agotadas: [] },
+      { id: 6, nombre: 'HOODIE CONCRETO', tipo: 'Sudadera', coleccion: 'Drop 02 Preview', precio: 849, tag: 'Preventa', img: 'img/1.jpg',
+        desc: 'Preventa exclusiva del Drop 02. Paleta gris con detalles morado neón. Inspirada en la arquitectura brutal de la ciudad. Envío en julio 2025.',
+        atributos: { Material: '80% algodón, 20% poliéster', Colección: 'Concreto — Drop 02', Envío: 'Julio 2025', Corte: 'Oversized' },
+        tallas: ['S','M','L','XL'], agotadas: [] },
+      { id: 7, nombre: 'CARGO NOCHE', tipo: 'Pantalón', coleccion: 'Cápsula Nocturna', precio: 950, tag: 'Limited', img: 'img/3.jpg',
+        desc: 'Cargo de la Cápsula Nocturna. Negro total con detalles reflectantes en costuras y tiras laterales. Brilla en la oscuridad, desaparece en el día.',
+        atributos: { Material: 'Ripstop negro 100%', Reflectantes: 'Sí, en costuras', Corte: 'Slim cargo', 'Cuidado': 'Lavar en frío' },
+        tallas: ['S','M','L','XL'], agotadas: [] },
+      { id: 8, nombre: 'COACH MURAL', tipo: 'Chaqueta', coleccion: 'Mural Series', precio: 1450, tag: 'Limited', img: 'img/5.webp',
+        desc: 'La pieza más ambiciosa de BLOKK. Cuatro artistas, cuatro paneles. Cada chaqueta es única en composición. Solo 50 unidades numeradas.',
+        atributos: { Material: 'Satin polyester', Artistas: '4 colaboradores', Unidades: '50 numeradas', Origen: 'México' },
+        tallas: ['S','M','L','XL'], agotadas: [] },
+    ];
+
+    const params = new URLSearchParams(window.location.search);
+    const id = Number(params.get('id')) || 1;
+    const producto = PRODUCTOS.find(p => p.id === id) || PRODUCTOS[0];
+    const relacionados = PRODUCTOS.filter(p => p.id !== producto.id).slice(0, 4);
+
+    // Actualizar breadcrumb
+    document.getElementById('bc-nombre').textContent = producto.nombre;
+    document.title = `${producto.nombre} — BLOKK.`;
+
+    let tallaSeleccionada = null;
+
+    function renderProducto() {
+      const el = document.getElementById('producto-detalle');
+      el.innerHTML = `
+        <div class="detalle-galeria">
+          <div class="galeria-principal">
+            <img src="${producto.img}" alt="${producto.nombre}" />
+          </div>
+        </div>
+        <div class="detalle-info">
+          <p class="detalle-coleccion">${producto.coleccion}</p>
+          <h1 class="detalle-nombre">${producto.nombre}</h1>
+          <p class="detalle-precio">$${producto.precio.toLocaleString('es-MX')}</p>
+          <p class="detalle-desc">${producto.desc}</p>
+
+          <p class="tallas-label">Talla <span id="talla-sel" style="color:var(--lila);margin-left:0.3rem;"></span></p>
+          <div class="tallas-grid" id="tallas-grid">
+            ${producto.tallas.map(t => `
+              <button class="talla-btn${producto.agotadas.includes(t) ? '' : ''}"
+                      data-talla="${t}"
+                      ${producto.agotadas.includes(t) ? 'disabled title="Agotada"' : ''}>
+                ${t}
+              </button>`).join('')}
+          </div>
+
+          <button class="btn-add-grande" id="btn-add" disabled>Selecciona una talla</button>
+          <p id="msg-add" style="font-size:0.82rem;color:var(--lila);min-height:1.2rem;margin-top:0.4rem;"></p>
+
+          <div class="detalle-atributos">
+            ${Object.entries(producto.atributos).map(([k,v]) => `
+              <div class="atributo">
+                <p class="atributo-key">${k}</p>
+                <p class="atributo-val">${v}</p>
+              </div>`).join('')}
+          </div>
+        </div>`;
+
+      // Lógica de tallas
+      document.getElementById('tallas-grid').addEventListener('click', (e) => {
+        const btn = e.target.closest('.talla-btn');
+        if (!btn || btn.disabled) return;
+        document.querySelectorAll('.talla-btn').forEach(b => b.classList.remove('activa'));
+        btn.classList.add('activa');
+        tallaSeleccionada = btn.dataset.talla;
+        document.getElementById('talla-sel').textContent = tallaSeleccionada;
+        const addBtn = document.getElementById('btn-add');
+        addBtn.disabled = false;
+        addBtn.textContent = 'Agregar al carrito';
+      });
+
+      // Agregar al carrito
+      document.getElementById('btn-add').addEventListener('click', () => {
+        if (!tallaSeleccionada) return;
+        const nombreConTalla = `${producto.nombre} (${tallaSeleccionada})`;
+        agregarAlCarrito(nombreConTalla, producto.precio, producto.img);
+        renderizarPanel();
+        document.getElementById('carrito-panel').classList.add('abierto');
+        const msg = document.getElementById('msg-add');
+        msg.textContent = `¡Listo! ${producto.nombre} talla ${tallaSeleccionada} en tu carrito.`;
+        setTimeout(() => msg.textContent = '', 3000);
+      });
+    }
+
+    function renderRelacionados() {
+      const grid = document.getElementById('relacionados');
+      grid.innerHTML = relacionados.map(p => `
+        <div class="producto-card" style="cursor:pointer" onclick="window.location.href='producto.html?id=${p.id}'">
+          <div class="producto-img">
+            <img src="${p.img}" alt="${p.nombre}" loading="lazy" />
+            ${p.tag ? `<span class="producto-tag">${p.tag}</span>` : ''}
+          </div>
+          <div class="producto-body">
+            <p class="producto-nombre">${p.nombre}</p>
+            <p class="producto-tipo">${p.tipo} — ${p.coleccion}</p>
+            <div class="producto-footer">
+              <span class="producto-precio">$${p.precio.toLocaleString('es-MX')}</span>
+              <button class="btn-agregar" onclick="event.stopPropagation()">Ver →</button>
+            </div>
+          </div>
+        </div>`).join('');
+    }
+
+    inicializarCarritoUI();
+    renderProducto();
+    renderRelacionados();
+  </script>
+
+</body>
+</html>
