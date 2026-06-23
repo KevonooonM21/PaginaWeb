@@ -55,12 +55,12 @@
     <!-- Filtros -->
     <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-bottom:1.5rem;">
       <div class="filtros-bar" id="filtros">
-        <button class="filtro-btn activo" data-filtro="todo">Todo</button>
-        <button class="filtro-btn" data-filtro="sudadera">Sudaderas</button>
-        <button class="filtro-btn" data-filtro="camiseta">Camisetas</button>
-        <button class="filtro-btn" data-filtro="pantalon">Pantalones</button>
-        <button class="filtro-btn" data-filtro="chaqueta">Chaquetas</button>
-        <button class="filtro-btn" data-filtro="limitada">Edición limitada</button>
+          <a href="proximamente.html" class="filtro-btn activo">Todo</a>
+          <a href="proximamente.html" class="filtro-btn">Sudaderas</a>
+          <a href="proximamente.html" class="filtro-btn">Camisetas</a>
+          <a href="proximamente.html" class="filtro-btn">Pantalones</a>
+          <a href="proximamente.html" class="filtro-btn">Chaquetas</a>
+          <a href="proximamente.html" class="filtro-btn">Edición limitada</a>
       </div>
       <div>
         <select id="orden" style="background:var(--gris1);border:1px solid #444;color:var(--crema);font-family:var(--body);font-size:0.78rem;padding:0.45rem 0.8rem;border-radius:2px;">
@@ -121,7 +121,7 @@
   </footer>
 
   <script type="module">
-    import { agregarAlCarrito, inicializarCarritoUI, renderizarPanel, actualizarContador } from './js/carrito.js';
+    import { agregarAlCarrito, inicializarCarritoUI, renderizarPanel, actualizarContador } from 'js/guard.js';
 
     const PRODUCTOS = [
       { id: 1, nombre: 'HOODIE MURAL', tipo: 'Sudadera', coleccion: 'Blokk 01', precio: 799, tag: 'Nuevo', filtros: ['sudadera'], img: 'img/1.jpg' },
