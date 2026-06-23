@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Colecciones — BLOKK.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/Estyle.css" />
+  <script src="js/guard.js"></script>
+  <link rel="stylesheet" href="css/paginas.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">BLOKK<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="colecciones.html" style="color:var(--lila)">Colecciones</a></li>
+      <li><a href="nosotros.html">El arte</a></li>
+      <li><a href="drops.html">Drops</a></li>
+      <li><a href="index.html#newsletter">Contacto</a></li>
+    </ul>
+    <button class="nav-cart" id="btn-carrito">Carrito (<span class="contador-carrito">0</span>)</button>
+  </nav>
+
+  <!-- PANEL CARRITO -->
+  <div class="carrito-panel" id="carrito-panel">
+    <p class="carrito-titulo">Tu carrito</p>
+    <ul class="carrito-lista" id="carrito-lista">
+      <li class="carrito-vacio">Aún no agregas nada</li>
+    </ul>
+    <div class="carrito-total">
+      <span>Total</span>
+      <span id="carrito-total">$0</span>
+    </div>
+    <button class="btn-checkout">Ir al checkout →</button>
+  </div>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <a href="index.html">Inicio</a>
+    <span>/</span>
+    <span style="color:var(--crema)">Colecciones</span>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <p class="section-label">Temporada 01 — 2026</p>
+    <h1 class="page-title">COLECCIONES</h1>
+    <p class="page-sub">Prendas con identidad. Arte urbano que llevas puesto.</p>
+  </section>
+
+  <!-- CATÁLOGO -->
+  <section style="padding: 3rem 2rem;">
+    <!-- Filtros -->
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-bottom:1.5rem;">
+      <div class="filtros-bar" id="filtros">
+          <a href="proximamente.html" class="filtro-btn activo">Todo</a>
+          <a href="proximamente.html" class="filtro-btn">Sudaderas</a>
+          <a href="proximamente.html" class="filtro-btn">Camisetas</a>
+          <a href="proximamente.html" class="filtro-btn">Pantalones</a>
+          <a href="proximamente.html" class="filtro-btn">Chaquetas</a>
+          <a href="proximamente.html" class="filtro-btn">Edición limitada</a>
+      </div>
+      <div>
+        <select id="orden" style="background:var(--gris1);border:1px solid #444;color:var(--crema);font-family:var(--body);font-size:0.78rem;padding:0.45rem 0.8rem;border-radius:2px;">
+          <option value="default">Ordenar por: Destacados</option>
+          <option value="precio-asc">Precio: menor a mayor</option>
+          <option value="precio-desc">Precio: mayor a menor</option>
+          <option value="nuevo">Más nuevos</option>
+        </select>
+      </div>
+    </div>
+
+    <p style="font-size:0.78rem; color:var(--gris2); margin-bottom:1.5rem;">
+      Mostrando <span id="cantidad-resultados">8</span> prendas
+    </p>
+
+    <!-- Grid de productos -->
+    <div class="catalogo-grid" id="catalogo">
+      <!-- Se renderiza con JS -->
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div>
+        <p class="footer-logo">BLOKK<span>.</span></p>
+        <p class="footer-tagline">Arte callejero en cada prenda.<br>Ropa del barrio para el mundo.</p>
+      </div>
+      <div>
+        <p class="footer-col-title">Tienda</p>
+        <ul class="footer-links">
+          <li><a href="colecciones.html">Colecciones</a></li>
+          <li><a href="drops.html">Drops</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Marca</p>
+        <ul class="footer-links">
+          <li><a href="nosotros.html">El arte</a></li>
+          <li><a href="nosotros.html#artistas">Artistas</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Soporte</p>
+        <ul class="footer-links">
+          <li><a href="#">FAQ</a></li>
+          <li><a href="index.html#newsletter">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 BLOKK. Todos los derechos reservados.</p>
+      <div class="footer-legal">
+        <a href="#">Privacidad</a>
+        <a href="#">Términos</a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { agregarAlCarrito, inicializarCarritoUI, renderizarPanel, actualizarContador } from 'js/guard.js';
+
+    const PRODUCTOS = [
+      { id: 1, nombre: 'HOODIE MURAL', tipo: 'Sudadera', coleccion: 'Blokk 01', precio: 799, tag: 'Nuevo', filtros: ['sudadera'], img: 'img/1.jpg' },
+      { id: 2, nombre: 'TEE THROW-UP', tipo: 'Camiseta', coleccion: 'Edición limitada', precio: 459, tag: 'Limited', filtros: ['camiseta','limitada'], img: 'img/2.jpg' },
+      { id: 3, nombre: 'CARGO URBAN', tipo: 'Pantalón', coleccion: 'Blokk 01', precio: 899, tag: '', filtros: ['pantalon'], img: 'img/3.jpg' },
+      { id: 4, nombre: 'JACKET GRAF', tipo: 'Chaqueta', coleccion: 'Edición especial', precio: 1290, tag: 'Nuevo', filtros: ['chaqueta','limitada'], img: 'img/5.webp' },
+      { id: 5, nombre: 'TEE OUTLINE', tipo: 'Camiseta', coleccion: 'Blokk 01', precio: 399, tag: '', filtros: ['camiseta'], img: 'img/2.jpg' },
+      { id: 6, nombre: 'HOODIE CONCRETO', tipo: 'Sudadera', coleccion: 'Drop 02 Preview', precio: 849, tag: 'Preventa', filtros: ['sudadera'], img: 'img/1.jpg' },
+      { id: 7, nombre: 'CARGO NOCHE', tipo: 'Pantalón', coleccion: 'Cápsula Nocturna', precio: 950, tag: 'Limited', filtros: ['pantalon','limitada'], img: 'img/3.jpg' },
+      { id: 8, nombre: 'COACH MURAL', tipo: 'Chaqueta', coleccion: 'Mural Series', precio: 1450, tag: 'Limited', filtros: ['chaqueta','limitada'], img: 'img/5.webp' },
+    ];
+
+    let filtroActivo = 'todo';
+    let ordenActivo = 'default';
+
+    function filtrarYOrdenar() {
+      let lista = filtroActivo === 'todo'
+        ? [...PRODUCTOS]
+        : PRODUCTOS.filter(p => p.filtros.includes(filtroActivo));
+
+      if (ordenActivo === 'precio-asc') lista.sort((a,b) => a.precio - b.precio);
+      if (ordenActivo === 'precio-desc') lista.sort((a,b) => b.precio - a.precio);
+      if (ordenActivo === 'nuevo') lista.reverse();
+
+      return lista;
+    }
+
+    function renderCatalogo() {
+      const grid = document.getElementById('catalogo');
+      const lista = filtrarYOrdenar();
+      document.getElementById('cantidad-resultados').textContent = lista.length;
+
+      if (lista.length === 0) {
+        grid.innerHTML = '<div class="sin-resultados"><p>No hay prendas en esta categoría todavía.</p></div>';
+        return;
+      }
+
+      grid.innerHTML = lista.map(p => `
+        <div class="producto-card" data-id="${p.id}">
+          <div class="producto-img">
+            <img src="${p.img}" alt="${p.nombre}" loading="lazy" />
+            ${p.tag ? `<span class="producto-tag">${p.tag}</span>` : ''}
+          </div>
+          <div class="producto-body">
+            <p class="producto-nombre">${p.nombre}</p>
+            <p class="producto-tipo">${p.tipo} — ${p.coleccion}</p>
+            <div class="producto-footer">
+              <span class="producto-precio">$${p.precio.toLocaleString('es-MX')}</span>
+              <button class="btn-agregar" data-nombre="${p.nombre}" data-precio="${p.precio}">+ Agregar</button>
+            </div>
+          </div>
+        </div>`).join('');
+
+      // Click en card → detalle
+      grid.querySelectorAll('.producto-card').forEach(card => {
+        card.addEventListener('click', (e) => {
+          if (e.target.classList.contains('btn-agregar')) return;
+          window.location.href = `producto.html?id=${card.dataset.id}`;
+        });
+      });
+
+      // Botones agregar
+      grid.querySelectorAll('.btn-agregar').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          agregarAlCarrito(btn.dataset.nombre, Number(btn.dataset.precio));
+          btn.textContent = '✓ Agregado';
+          btn.classList.add('agregado');
+          renderizarPanel();
+          document.getElementById('carrito-panel').classList.add('abierto');
+          setTimeout(() => {
+            btn.textContent = '+ Agregar';
+            btn.classList.remove('agregado');
+          }, 1400);
+        });
+      });
+    }
+
+    // Filtros
+    document.getElementById('filtros').addEventListener('click', (e) => {
+      if (!e.target.classList.contains('filtro-btn')) return;
+      document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('activo'));
+      e.target.classList.add('activo');
+      filtroActivo = e.target.dataset.filtro;
+      renderCatalogo();
+    });
+
+    document.getElementById('orden').addEventListener('change', (e) => {
+      ordenActivo = e.target.value;
+      renderCatalogo();
+    });
+
+    inicializarCarritoUI();
+    renderCatalogo();
+  </script>
+
+</body>
+</html>

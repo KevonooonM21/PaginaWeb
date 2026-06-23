@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BLOKK. — Ropa del barrio para el barrio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/Estyle.css" />
+  <script src="js/guard.js"></script>
+  <link rel="stylesheet" href="css/paginas.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">BLOKK<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="colecciones.html">Colecciones</a></li>
+      <li><a href="nosotros.html">El arte</a></li>
+      <li><a href="drops.html">Drops</a></li>
+      <li><a href="#newsletter">Contacto</a></li>
+    </ul>
+    <button class="nav-cart" id="btn-carrito">Carrito (<span class="contador-carrito">0</span>)</button>
+  </nav>
+
+  <!-- PANEL DEL CARRITO -->
+  <div class="carrito-panel" id="carrito-panel">
+    <p class="carrito-titulo">Tu carrito</p>
+    <ul class="carrito-lista" id="carrito-lista">
+      <li class="carrito-vacio">Aún no agregas nada</li>
+    </ul>
+    <div class="carrito-total">
+      <span>Total</span>
+      <span id="carrito-total">$0</span>
+    </div>
+    <button class="btn-checkout">Ir al checkout →</button>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero">
+    <p class="hero-eyebrow">Nueva temporada 2026</p>
+    <h1 class="hero-title">
+      ROPA DEL <span class="accent">BARRIO</span><br>PARA EL BARRIO
+    </h1>
+    <p class="hero-sub">Arte callejero en cada prenda. Hecho para los que viven la calle, no solo la ven.</p>
+    <div class="hero-cta">
+      <a href="colecciones.html" class="btn btn-primary">Ver colección</a>
+      <a href="nosotros.html" class="btn">Nuestra historia</a>
+    </div>
+  </section>
+
+  <!-- COLECCIONES -->
+  <section id="colecciones">
+    <div class="colecciones-header">
+      <div>
+        <p class="section-label">Temporada 01</p>
+        <h2 class="section-title">COLECCIONES</h2>
+        <div class="divider"></div>
+        <p class="section-desc">Prendas con identidad. Cada pieza lleva arte urbano directo desde las calles.</p>
+      </div>
+      <a href="colecciones.html" class="btn">Ver todo</a>
+    </div>
+
+    <div class="productos-grid">
+
+      <div class="producto-card" data-nombre="HOODIE MURAL" data-precio="799" onclick="window.location.href='producto.html?id=1'" style="cursor:pointer">
+        <div class="producto-img">
+          <img src="img/1.jpg" alt="Hoodie Mural" />
+          <span class="producto-tag">Nuevo</span>
+        </div>
+        <div class="producto-body">
+          <p class="producto-nombre">HOODIE MURAL</p>
+          <p class="producto-tipo">Sudadera — Colección Blokk 01</p>
+          <div class="producto-footer">
+            <span class="producto-precio">$799</span>
+            <button class="btn-agregar" onclick="event.stopPropagation()">+ Agregar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="producto-card" data-nombre="TEE THROW-UP" data-precio="459" onclick="window.location.href='producto.html?id=2'" style="cursor:pointer">
+        <div class="producto-img">
+          <img src="img/2.jpg" alt="TEE THROW-UP" />
+          <span class="producto-tag">Limited</span>
+        </div>
+        <div class="producto-body">
+          <p class="producto-nombre">TEE THROW-UP</p>
+          <p class="producto-tipo">Camiseta — Edición limitada</p>
+          <div class="producto-footer">
+            <span class="producto-precio">$459</span>
+            <button class="btn-agregar" onclick="event.stopPropagation()">+ Agregar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="producto-card" data-nombre="CARGO URBAN" data-precio="899" onclick="window.location.href='producto.html?id=3'" style="cursor:pointer">
+        <div class="producto-img">
+          <img src="img/3.jpg" alt="CARGO URBAN" />
+        </div>
+        <div class="producto-body">
+          <p class="producto-nombre">CARGO URBAN</p>
+          <p class="producto-tipo">Pantalón — Colección Blokk 01</p>
+          <div class="producto-footer">
+            <span class="producto-precio">$899</span>
+            <button class="btn-agregar" onclick="event.stopPropagation()">+ Agregar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="producto-card" data-nombre="JACKET GRAF" data-precio="1290" onclick="window.location.href='producto.html?id=4'" style="cursor:pointer">
+        <div class="producto-img">
+          <img src="img/5.webp" alt="JACKET GRAF" />
+          <span class="producto-tag">Nuevo</span>
+        </div>
+        <div class="producto-body">
+          <p class="producto-nombre">JACKET GRAF</p>
+          <p class="producto-tipo">Chaqueta — Edición especial</p>
+          <div class="producto-footer">
+            <span class="producto-precio">$1,290</span>
+            <button class="btn-agregar" onclick="event.stopPropagation()">+ Agregar</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EL ARTE -->
+  <section id="arte">
+    <div class="arte-visual">
+      <img src="img/vatooooooooo.jpg" alt="Arte urbano BLOKK" />
+    </div>
+
+    <div class="arte-content">
+      <p class="section-label">Nuestra historia</p>
+      <h2 class="section-title">EL ARTE ES EL MENSAJE</h2>
+      <div class="divider"></div>
+      <p class="section-desc">
+        BLOKK. nació en las calles. Cada prenda es un lienzo, cada colección es un mural.
+        Colaboramos con artistas urbanos para llevar el grafiti y la cultura hip-hop
+        a la ropa que usas todos los días. No vendemos ropa. Vendemos identidad.
+      </p>
+      <div class="arte-stats">
+        <div class="stat"><p class="stat-num">12+</p><p class="stat-label">Artistas colaboradores</p></div>
+        <div class="stat"><p class="stat-num">3</p><p class="stat-label">Colecciones lanzadas</p></div>
+        <div class="stat"><p class="stat-num">100%</p><p class="stat-label">Diseño original</p></div>
+        <div class="stat"><p class="stat-num">5K+</p><p class="stat-label">Prendas entregadas</p></div>
+      </div>
+      <div style="margin-top:2rem;">
+        <a href="nosotros.html" class="btn btn-primary">Conoce la historia completa</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DROPS -->
+  <section id="drops">
+    <p class="section-label">Próximos lanzamientos</p>
+    <h2 class="section-title">DROPS</h2>
+    <div class="divider"></div>
+    <p class="section-desc" style="margin-bottom: 2.5rem;">Ediciones limitadas. Una vez que se van, se van.</p>
+
+    <div class="drops-grid">
+
+      <div class="drop-card">
+        <div class="drop-banner" style="background-image:url('img/Barrer.webp');background-size:cover;background-position:center;">BLOKK.</div>
+        <div class="drop-body">
+          <p class="drop-fecha">Drop 02 — Julio 2026</p>
+          <h3 class="drop-nombre">COLECCIÓN CONCRETO</h3>
+          <p class="drop-desc">Inspirada en la arquitectura brutal de la ciudad. Texturas de concreto, líneas duras, paleta gris con detalles morado neón.</p>
+          <a href="drops.html" class="btn btn-primary">Avísame cuando salga</a>
+          <div class="countdown">
+            <div class="cd-unit"><p class="cd-num" id="cd-days">00</p><p class="cd-label">Días</p></div>
+            <div class="cd-unit"><p class="cd-num" id="cd-hours">00</p><p class="cd-label">Hrs</p></div>
+            <div class="cd-unit"><p class="cd-num" id="cd-mins">00</p><p class="cd-label">Min</p></div>
+            <div class="cd-unit"><p class="cd-num" id="cd-secs">00</p><p class="cd-label">Seg</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:1.2rem;">
+        <div class="drop-card" onclick="window.location.href='drops.html'" style="cursor:pointer">
+          <div class="drop-banner-sm" style="background-image:url('img/night.jpg');background-size:cover;background-position:center;color:white;text-shadow:0 0 15px rgba(255,255,255,0.8);">BLKK</div>
+          <div class="drop-body">
+            <p class="drop-fecha">Drop 03 — Sep 2026</p>
+            <h3 class="drop-nombre-sm">CÁPSULA NOCTURNA</h3>
+            <p class="drop-desc" style="font-size:0.8rem;">Prendas para la noche. Negro total con reflejantes.</p>
+          </div>
+        </div>
+        <div class="drop-card" onclick="window.location.href='drops.html'" style="cursor:pointer">
+          <div class="drop-banner-sm" style="background-image:url('img/mural.webp');background-size:cover;background-position:center;color:white;text-shadow:0 2px 8px rgba(0,0,0,0.9);">MRL</div>
+          <div class="drop-body">
+            <p class="drop-fecha">Drop 04 — Nov 2026</p>
+            <h3 class="drop-nombre-sm">MURAL SERIES</h3>
+            <p class="drop-desc" style="font-size:0.8rem;">Cada prenda, una obra. Collab con 4 artistas locales.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section id="newsletter">
+    <p class="section-label" style="text-align:center;">Únete a la banda</p>
+    <h2 class="nl-title">ENTRA AL BLOQUE</h2>
+    <p class="nl-sub">Drops exclusivos, preventas y contenido que no sale en redes.</p>
+    <form class="nl-form" id="form-newsletter">
+      <input class="nl-input" type="email" id="input-email" placeholder="tu@correo.com" />
+      <button class="nl-btn" type="submit">Entrar</button>
+    </form>
+    <p class="form-mensaje" id="mensaje-newsletter"></p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div>
+        <p class="footer-logo">BLOKK<span>.</span></p>
+        <p class="footer-tagline">Arte callejero en cada prenda.<br>Ropa del barrio para el mundo.</p>
+      </div>
+      <div>
+        <p class="footer-col-title">Tienda</p>
+        <ul class="footer-links">
+          <li><a href="colecciones.html">Colecciones</a></li>
+          <li><a href="drops.html">Drops</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Marca</p>
+        <ul class="footer-links">
+          <li><a href="nosotros.html">El arte</a></li>
+          <li><a href="nosotros.html#artistas">Artistas</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Soporte</p>
+        <ul class="footer-links">
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#newsletter">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 BLOKK. Todos los derechos reservados.</p>
+      <div class="footer-legal">
+        <a href="#">Privacidad</a>
+        <a href="#">Términos</a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

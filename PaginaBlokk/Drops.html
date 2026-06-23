@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drops — BLOKK.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/Estyle.css" />
+  <script src="js/guard.js"></script>
+  <link rel="stylesheet" href="css/paginas.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">BLOKK<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="colecciones.html">Colecciones</a></li>
+      <li><a href="nosotros.html">El arte</a></li>
+      <li><a href="drops.html" style="color:var(--lila)">Drops</a></li>
+      <li><a href="index.html#newsletter">Contacto</a></li>
+    </ul>
+    <button class="nav-cart" id="btn-carrito">Carrito (<span class="contador-carrito">0</span>)</button>
+  </nav>
+
+  <!-- PANEL CARRITO -->
+  <div class="carrito-panel" id="carrito-panel">
+    <p class="carrito-titulo">Tu carrito</p>
+    <ul class="carrito-lista" id="carrito-lista">
+      <li class="carrito-vacio">Aún no agregas nada</li>
+    </ul>
+    <div class="carrito-total">
+      <span>Total</span>
+      <span id="carrito-total">$0</span>
+    </div>
+    <button class="btn-checkout">Ir al checkout →</button>
+  </div>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <a href="index.html">Inicio</a>
+    <span>/</span>
+    <span style="color:var(--crema)">Drops</span>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <p class="section-label">Lanzamientos exclusivos</p>
+    <h1 class="page-title">DROPS</h1>
+    <p class="page-sub">Ediciones limitadas. Una vez que se van, se van para siempre.</p>
+  </section>
+
+  <!-- DROP PRINCIPAL (featured) -->
+  <section style="padding:3rem 2rem 2rem;">
+    <div class="drops-hero-badge">Próximo — Drop 02</div>
+    <div class="drop-featured">
+      <div class="drop-img-full">
+        <img src="img/Barrer.webp" alt="Colección Concreto" />
+        <div class="drop-overlay"></div>
+      </div>
+      <div class="drop-featured-body">
+        <p class="drop-status proximo">● Próximo lanzamiento</p>
+        <h2 class="drop-titulo">COLECCIÓN<br>CONCRETO</h2>
+        <p class="drop-texto">
+          Inspirada en la arquitectura brutal de la ciudad. Texturas de concreto,
+          líneas duras, paleta gris con detalles morado neón. 12 piezas. Una sola tirada.
+        </p>
+
+        <div class="countdown-bloque">
+          <div class="cd-caja"><p class="cd-num-lg" id="cd2-days">00</p><p class="cd-label-lg">Días</p></div>
+          <div class="cd-caja"><p class="cd-num-lg" id="cd2-hours">00</p><p class="cd-label-lg">Hrs</p></div>
+          <div class="cd-caja"><p class="cd-num-lg" id="cd2-mins">00</p><p class="cd-label-lg">Min</p></div>
+          <div class="cd-caja"><p class="cd-num-lg" id="cd2-secs">00</p><p class="cd-label-lg">Seg</p></div>
+        </div>
+
+        <form id="form-drop" style="display:flex;gap:0;max-width:340px;">
+          <input id="email-drop" type="email" placeholder="tu@correo.com"
+            style="flex:1;background:rgba(255,255,255,0.06);border:1px solid #444;border-right:none;color:var(--crema);font-family:var(--body);padding:0.75rem 1rem;font-size:0.85rem;" />
+          <button type="submit"
+            style="background:var(--morado);color:#fff;border:none;padding:0.75rem 1.2rem;font-family:var(--body);font-weight:700;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.08em;cursor:pointer;white-space:nowrap;">
+            Avísame
+          </button>
+        </form>
+        <p id="msg-drop" style="font-size:0.8rem;min-height:1.1rem;margin-top:0.5rem;color:var(--lila);"></p>
+
+        <p style="font-size:0.72rem;color:var(--gris2);margin-top:1rem;">
+          15 Jul 2026 · 12:00 hrs CDMX · Solo online
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DROPS PRÓXIMOS -->
+  <section style="padding:1rem 2rem 2rem;">
+    <p class="section-label">En camino</p>
+    <h2 class="section-title" style="font-size:1.6rem;margin-bottom:1.5rem;">PRÓXIMOS DROPS</h2>
+
+    <div class="drops-lista">
+
+      <div class="drop-row">
+        <img class="drop-row-img" src="img/night.jpg" alt="Cápsula Nocturna" />
+        <div class="drop-row-info">
+          <p class="drop-row-fecha">Drop 03 — Septiembre 2026</p>
+          <p class="drop-row-nombre">CÁPSULA NOCTURNA</p>
+          <p class="drop-row-desc">Prendas para la noche. Negro total con materiales reflectantes en costuras y detalles que brillan bajo la luz UV.</p>
+        </div>
+        <button class="btn" style="white-space:nowrap;align-self:center;" onclick="document.getElementById('nl-quick').scrollIntoView({behavior:'smooth'})">Avísame</button>
+      </div>
+
+      <div class="drop-row">
+        <img class="drop-row-img" src="img/mural.webp" alt="Mural Series" />
+        <div class="drop-row-info">
+          <p class="drop-row-fecha">Drop 04 — Noviembre 2026</p>
+          <p class="drop-row-nombre">MURAL SERIES</p>
+          <p class="drop-row-desc">Cada prenda, una obra. Colaboración con 4 artistas locales. 50 piezas numeradas por artista.</p>
+        </div>
+        <button class="btn" style="white-space:nowrap;align-self:center;" onclick="document.getElementById('nl-quick').scrollIntoView({behavior:'smooth'})">Avísame</button>
+      </div>
+
+      <div class="drop-row" style="opacity:0.5;">
+        <div style="width:80px;height:80px;background:var(--gris1);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:1.5rem;color:var(--gris1);">?</div>
+        <div class="drop-row-info">
+          <p class="drop-row-fecha">Drop 05 — 2026</p>
+          <p class="drop-row-nombre">SIN REVELAR</p>
+          <p class="drop-row-desc">Algo grande está cocinándose. Sé el primero en enterarte.</p>
+        </div>
+        <button class="btn" style="white-space:nowrap;align-self:center;" onclick="document.getElementById('nl-quick').scrollIntoView({behavior:'smooth'})">Avísame</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DROPS PASADOS -->
+  <section style="padding:2rem 2rem 4rem;background:var(--gris1);">
+    <p class="section-label">Ya fueron</p>
+    <h2 class="section-title" style="font-size:1.6rem;margin-bottom:1.5rem;">DROP 01 — BLOKK. ORIGINAL</h2>
+    <div class="catalogo-grid" style="grid-template-columns:repeat(auto-fill,minmax(200px,1fr));">
+      <div class="producto-card" onclick="window.location.href='producto.html?id=1'" style="cursor:pointer;opacity:0.7;">
+        <div class="producto-img"><img src="img/1.jpg" alt="Hoodie Mural" /><span class="producto-tag" style="background:#555;">Agotado</span></div>
+        <div class="producto-body">
+          <p class="producto-nombre">HOODIE MURAL</p>
+          <p class="producto-tipo">Sudadera — Blokk 01</p>
+          <div class="producto-footer"><span class="producto-precio">$799</span><span style="font-size:0.72rem;color:var(--gris2);">AGOTADO</span></div>
+        </div>
+      </div>
+      <div class="producto-card" onclick="window.location.href='producto.html?id=2'" style="cursor:pointer;opacity:0.7;">
+        <div class="producto-img"><img src="img/2.jpg" alt="Tee Throw-Up" /><span class="producto-tag" style="background:#555;">Agotado</span></div>
+        <div class="producto-body">
+          <p class="producto-nombre">TEE THROW-UP</p>
+          <p class="producto-tipo">Camiseta — Edición limitada</p>
+          <div class="producto-footer"><span class="producto-precio">$459</span><span style="font-size:0.72rem;color:var(--gris2);">AGOTADO</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER RÁPIDO -->
+  <section id="nl-quick" style="padding:4rem 2rem;text-align:center;border-top:1px solid var(--gris1);">
+    <p class="section-label" style="text-align:center;">No te pierdas nada</p>
+    <h2 style="font-family:var(--display);font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:0.5rem;">ENTRA AL BLOQUE</h2>
+    <p style="color:var(--gris2);margin-bottom:1.5rem;">Drops exclusivos, preventas y contenido que no sale en redes.</p>
+    <form id="form-nl2" style="display:flex;max-width:420px;margin:0 auto;flex-wrap:wrap;gap:0;">
+      <input id="email-nl2" type="email" placeholder="tu@correo.com"
+        style="flex:1;background:var(--gris1);border:1px solid #444;border-right:none;color:var(--crema);font-family:var(--body);padding:0.8rem 1rem;" />
+      <button type="submit"
+        style="background:var(--morado);color:#fff;border:none;padding:0.8rem 1.5rem;font-family:var(--body);font-weight:700;text-transform:uppercase;font-size:0.8rem;cursor:pointer;">
+        Entrar
+      </button>
+    </form>
+    <p id="msg-nl2" style="margin-top:0.7rem;font-size:0.85rem;min-height:1.2rem;color:var(--lila);"></p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div>
+        <p class="footer-logo">BLOKK<span>.</span></p>
+        <p class="footer-tagline">Arte callejero en cada prenda.<br>Ropa del barrio para el mundo.</p>
+      </div>
+      <div>
+        <p class="footer-col-title">Tienda</p>
+        <ul class="footer-links">
+          <li><a href="colecciones.html">Colecciones</a></li>
+          <li><a href="drops.html">Drops</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Marca</p>
+        <ul class="footer-links">
+          <li><a href="nosotros.html">El arte</a></li>
+          <li><a href="nosotros.html#artistas">Artistas</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Soporte</p>
+        <ul class="footer-links">
+          <li><a href="#">FAQ</a></li>
+          <li><a href="index.html#newsletter">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 BLOKK. Todos los derechos reservados.</p>
+      <div class="footer-legal"><a href="#">Privacidad</a><a href="#">Términos</a></div>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { inicializarCarritoUI } from 'js/carrito.js';
+    inicializarCarritoUI();
+
+    // Countdown Drop 02
+    const target = new Date('2026-07-15T12:00:00-06:00');
+    function tick() {
+      const diff = target - new Date();
+      const set = (id, val) => { const el = document.getElementById(id); if(el) el.textContent = String(val).padStart(2,'0'); };
+      if (diff <= 0) { ['cd2-days','cd2-hours','cd2-mins','cd2-secs'].forEach(id => set(id, '00')); return; }
+      set('cd2-days',  Math.floor(diff / 86400000));
+      set('cd2-hours', Math.floor((diff % 86400000) / 3600000));
+      set('cd2-mins',  Math.floor((diff % 3600000) / 60000));
+      set('cd2-secs',  Math.floor((diff % 60000) / 1000));
+    }
+    tick(); setInterval(tick, 1000);
+
+    // Form drop avísame
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    document.getElementById('form-drop').addEventListener('submit', e => {
+      e.preventDefault();
+      const v = document.getElementById('email-drop').value.trim();
+      const msg = document.getElementById('msg-drop');
+      if (!v || !regex.test(v)) { msg.style.color='#ff6b6b'; msg.textContent = 'Correo inválido.'; return; }
+      msg.style.color='var(--lila)'; msg.textContent = '¡Listo! Te avisamos el día del drop 🔥';
+      e.target.reset();
+    });
+
+    // Form newsletter quick
+    document.getElementById('form-nl2').addEventListener('submit', e => {
+      e.preventDefault();
+      const v = document.getElementById('email-nl2').value.trim();
+      const msg = document.getElementById('msg-nl2');
+      if (!v || !regex.test(v)) { msg.style.color='#ff6b6b'; msg.textContent = 'Ese correo no parece válido.'; return; }
+      msg.style.color='var(--lila)'; msg.textContent = '¡Ya estás dentro del bloque! 🔥';
+      e.target.reset();
+    });
+  </script>
+
+</body>
+</html>
